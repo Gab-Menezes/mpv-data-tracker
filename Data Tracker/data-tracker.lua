@@ -14,7 +14,8 @@ local begin =
     hour = -1,
     minute = -1,
     date = "",
-    time = ""
+    time = "",
+    wday = ""
 }
 local duration = -1
 local title = ""
@@ -32,6 +33,7 @@ function get_file_data()
     begin.minute = tonumber(os.date("%M"))
     begin.date = os.date("%x")
     begin.time = os.date("%X")
+    begin.wday = os.date("%a")
 
     duration = mp.get_property_number("duration", -1)
 
@@ -78,13 +80,15 @@ function add_episode()
                 begin.minute..","..
                 begin.date..","..
                 begin.time..","..
+                begin.wday..","..
                 tonumber(os.date("%d"))..","..
                 tonumber(os.date("%m"))..","..
                 tonumber(os.date("%y"))..","..
                 tonumber(os.date("%H"))..","..
                 tonumber(os.date("%M"))..","..
                 os.date("%x")..","..
-                os.date("%X").."\n")
+                os.date("%X")..","..
+                os.date("%a").."\n")
     file:close()
     addEpisode = false
 
