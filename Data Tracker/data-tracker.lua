@@ -66,6 +66,8 @@ function get_file_data()
 end
 
 function add_episode()
+    timer:kill()
+
     local file = io.open(path, "a+")
     file:write(title..","..
                 duration..","..
@@ -98,7 +100,6 @@ function automatic_add()
     if PercentageWatched >= 0.8 and PercentageSpent >= 0.2 then
     --if PercentageWatched >= 0.8 then
         --mp.unobserve_property(automatic_add)
-        timer:kill()
         add_episode()
     end
 end
