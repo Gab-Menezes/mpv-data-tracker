@@ -59,7 +59,7 @@ function get_file_data()
 
     if addEpisode then
         --mp.observe_property("time-pos", "number", automatic_add)
-        timer = mp.add_timeout(1, automatic_add)
+        timer = mp.add_periodic_timer(1, automatic_add)
     end
 
     mp.add_key_binding("'", "manual_add", manual_add)
@@ -95,8 +95,9 @@ function automatic_add()
 
     local PercentageWatched = time/duration
     local PercentageSpent = timeSpent/duration
-    if PercentageWatched >= 0.8 and PercentageSpent >= 0.2 then
-    --if PercentageWatched >= 0.8 then
+    mp.osd_message(PercentageWatched)
+    --if PercentageWatched >= 0.8 and PercentageSpent >= 0.2 then
+    if PercentageWatched >= 0.8 then
         --mp.unobserve_property(automatic_add)
         timer:kill()
         add_episode()
