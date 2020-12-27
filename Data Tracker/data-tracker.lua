@@ -96,8 +96,8 @@ function automatic_add()
     local PercentageWatched = time/duration
     local PercentageSpent = timeSpent/duration
     mp.osd_message(PercentageWatched)
-    --if PercentageWatched >= 0.8 and PercentageSpent >= 0.2 then
-    if PercentageWatched >= 0.8 then
+    if PercentageWatched >= 0.8 and PercentageSpent >= 0.2 then
+    --if PercentageWatched >= 0.8 then
         --mp.unobserve_property(automatic_add)
         timer:kill()
         add_episode()
