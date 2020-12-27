@@ -69,8 +69,8 @@ def create_year_calendar(title, day_nums, day_vals, min_val, max_val, id):
     fig, ax = plt.subplots(3, 4, figsize=(16.85, 10.5))
     #.reversed()
     color_map =  plt.cm.get_cmap('summer').reversed()
-    max_val = math.ceil(max_val/5)*5
-    min_val = math.floor(min_val/5)*5
+    max_val = math.ceil(max_val/10)*10
+    min_val = math.floor(min_val/10)*10
 
     im = None
     bg_color = '#3caea3'
