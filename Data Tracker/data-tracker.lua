@@ -96,15 +96,17 @@ function add_episode()
 end
 
 function automatic_add()
-    local timeSpent = os.time() - start
-    local time = mp.get_property_number("time-pos", -1)
+    if addEpisode then
+        local timeSpent = os.time() - start
+        local time = mp.get_property_number("time-pos", -1)
 
-    local PercentageWatched = time/duration
-    local PercentageSpent = timeSpent/duration
-    if PercentageWatched >= 0.8 and PercentageSpent >= 0.2 then
-    --if PercentageWatched >= 0.8 then
-        --mp.unobserve_property(automatic_add)
-        add_episode()
+        local PercentageWatched = time/duration
+        local PercentageSpent = timeSpent/duration
+        if PercentageWatched >= 0.8 and PercentageSpent >= 0.2 then
+        --if PercentageWatched >= 0.8 then
+            --mp.unobserve_property(automatic_add)
+            add_episode()
+        end
     end
 end
 
