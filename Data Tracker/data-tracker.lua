@@ -68,6 +68,7 @@ function get_file_data()
 end
 
 function add_episode()
+    addEpisode = false
     timer:kill()
 
     local file = io.open(path, "a+")
@@ -90,7 +91,6 @@ function add_episode()
                 os.date("%X")..","..
                 os.date("%a").."\n")
     file:close()
-    addEpisode = false
 
     mp.osd_message("Data tracked")
 end
