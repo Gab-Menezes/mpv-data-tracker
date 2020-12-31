@@ -1,1 +1,1 @@
-name,duration,i_day,i_month,i_year,i_hour,i_minute,i_date,i_time,i_wday,f_day,f_month,f_year,f_hour,f_minute,f_date,f_time,f_wday
+name,duration,num_pause,i_day,i_month,i_year,i_hour,i_minute,i_date,i_time,i_wday,f_day,f_month,f_year,f_hour,f_minute,f_date,f_time,f_wday
