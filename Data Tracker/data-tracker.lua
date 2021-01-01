@@ -19,7 +19,6 @@ local begin =
 }
 local duration = -1
 local title = ""
-local num_pause = 0
 
 local addEpisode = true
 
@@ -37,7 +36,6 @@ function get_file_data()
     begin.wday = os.date("%a")
 
     duration = mp.get_property_number("duration", -1)
-    num_pause = 0
 
     title = mp.get_property("media-title", "")
     title = title:gsub('%b[]', '')--remove []
@@ -67,7 +65,6 @@ function get_file_data()
     end
 
     mp.add_key_binding("'", "manual_add", manual_add)
-    mp.observe_property("pause", "bool", count_pause)
 end
 
 function add_episode()
@@ -77,7 +74,6 @@ function add_episode()
     local file = io.open(path, "a+")
     file:write(title..","..
                 duration..","..
-                num_pause..","..
                 begin.day..","..
                 begin.month..","..
                 begin.year..","..
@@ -120,10 +116,6 @@ function manual_add()
     else
         mp.osd_message("Data alredy tracked")
     end
-end
-
-function count_pause()
-    num_pause = num_pause + 1
 end
 
 
