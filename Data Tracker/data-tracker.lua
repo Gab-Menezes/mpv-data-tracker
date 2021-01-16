@@ -40,6 +40,7 @@ function get_file_data()
     title = mp.get_property("media-title", "")
     title = title:gsub('%b[]', '')--remove []
     title = title:gsub('%b()', '')--remove ()
+    title = title:gsub(',', '')--remove ()
     if title:match('%..+') ~= nil then -- remove file extension
         title = title:match('(.+)%..+') 
     end

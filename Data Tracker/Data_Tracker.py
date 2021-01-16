@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
 
 # Settings
-year = 2020
+year = 2021
 weeks = [1, 2, 3, 4, 5, 6]
 days = ['M', 'T', 'W', 'T', 'F', 'S', 'S']
 month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
