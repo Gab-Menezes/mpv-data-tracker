@@ -52,7 +52,7 @@ def split_months(df, year):
         for duration in filter['duration']:
             sum += duration
 
-        sum = float(sum/60.0)
+        sum = (sum/60.0)
         min_val = min(sum, min_val)
         max_val = max(sum, max_val)
         #----------------------------------------------------------

@@ -37,7 +37,8 @@ function get_file_data()
 
     duration = mp.get_property_number("duration", -1)
 
-    title = mp.get_property("media-title", "")
+    --title = mp.get_property("media-title", "")
+    title = mp.get_property("filename", "")
     title = title:gsub('%b[]', '')--remove []
     title = title:gsub('%b()', '')--remove ()
     title = title:gsub(',', '')--remove ()
