@@ -3,6 +3,7 @@ import math
 import pandas as pd
 import random
 import matplotlib.pyplot as plt
+import palettable
 from matplotlib.patches import Polygon
 
 # Settings
